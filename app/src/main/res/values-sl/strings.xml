@@ -59,6 +59,7 @@
   <string name="AttachmentKeyboard_location">Lokacija</string>
   <string name="AttachmentKeyboard_Signal_needs_permission_to_show_your_photos_and_videos">Aplikacija Signal rabi dovoljenje za prikaz vaših fotografij in videov.</string>
   <string name="AttachmentKeyboard_give_access">Dodeli dostop</string>
+  <string name="AttachmentKeyboard_payment">Plačilo</string>
   <!--AttachmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Ne najdem aplikacije za izbor datotek.</string>
   <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Dostop do shrambe je bil trajno onemogočen. Aplikacija Signal potrebuje dovoljenje za dostop do sistemskega pomnilnika za pripenjanje fotografij, videa in zvoka k sporočilom. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Shramba\".</string>
@@ -671,6 +672,7 @@
   <string name="ManageGroupActivity_mentions">Omembe</string>
   <string name="ManageGroupActivity_chat_wallpaper">Ozadje pogovora</string>
   <string name="ManageGroupActivity_until_s">Do %1$s</string>
+  <string name="ManageGroupActivity_always">Za vedno</string>
   <string name="ManageGroupActivity_off">Izklopljena</string>
   <string name="ManageGroupActivity_on">Vklopljena</string>
   <string name="ManageGroupActivity_view_all_members">Poglej vse člane</string>
@@ -723,6 +725,7 @@
   <string name="ManageRecipientActivity_mute_notifications">Izklopi obvestila</string>
   <string name="ManageRecipientActivity_custom_notifications">Obvestila po meri</string>
   <string name="ManageRecipientActivity_until_s">Do %1$s</string>
+  <string name="ManageRecipientActivity_always">Za vedno</string>
   <string name="ManageRecipientActivity_off">Izklopljena</string>
   <string name="ManageRecipientActivity_on">Vklopljena</string>
   <string name="ManageRecipientActivity_add_to_a_group">Dodaj v skupino</string>
@@ -919,6 +922,7 @@
   <string name="NotificationBarManager_signal_call_in_progress">Klic Signal poteka</string>
   <string name="NotificationBarManager__establishing_signal_call">Vzpostavljam klic Signal</string>
   <string name="NotificationBarManager__incoming_signal_call">Dohodni klic Signal</string>
+  <string name="NotificationBarManager__stopping_signal_call_service">Ustavljanje klicanja Signal</string>
   <string name="NotificationBarManager__deny_call">Zavrni klic</string>
   <string name="NotificationBarManager__answer_call">Sprejmi klic</string>
   <string name="NotificationBarManager__end_call">Zaključi klic</string>
@@ -1163,6 +1167,7 @@
   <string name="MessageRequestBottomView_do_you_want_to_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">Se želite pridružiti skupini in z njenimi člani/cami deliti svoje ime in fotografijo? Dokler se ne pridružite, ne bodo vedeli/e, da ste videli njihova sporočila.</string>
   <string name="MessageRequestBottomView_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">Se želite pridružiti skupini? Dokler se ne pridružite, skupina ne bo vedela, da ste videli njena sporočila.</string>
   <string name="MessageRequestBottomView_unblock_this_group_and_share_your_name_and_photo_with_its_members">Želite omogočiti članom/icam skupine, da vam pošiljajo sporočila in z njimi deliti svoje ime in fotografijo? Dokler jih ne odblokirate, od njih ne boste prejemali sporočil.</string>
+  <string name="MessageRequestProfileView_view">Preglej</string>
   <string name="MessageRequestProfileView_member_of_one_group">Član/ica skupine %1$s</string>
   <string name="MessageRequestProfileView_member_of_two_groups">Član/ica skupin %1$s in %2$s</string>
   <string name="MessageRequestProfileView_member_of_many_groups">Član/ica skupin %1$s, %2$s in %3$s</string>
@@ -1583,16 +1588,18 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="MessageNotifier_this_message_was_deleted">Sporočilo je bilo izbrisano</string>
   <string name="TurnOffContactJoinedNotificationsActivity__turn_off_contact_joined_signal">Želite izklopiti obvestila o novih članih Signalove skupine? Kasneje jih lahko spet vklopite v Signal &gt; Nastavitve &gt; Obvestila.</string>
   <!--Notification Channels-->
-  <string name="NotificationChannel_messages">Privzeto</string>
+  <string name="NotificationChannel_channel_messages">Sporočila</string>
   <string name="NotificationChannel_calls">Klici</string>
   <string name="NotificationChannel_failures">Napake</string>
   <string name="NotificationChannel_backups">Varnostne kopije</string>
   <string name="NotificationChannel_locked_status">Stanje zaklepa</string>
   <string name="NotificationChannel_app_updates">Posodobitve aplikacije</string>
   <string name="NotificationChannel_other">Drugo</string>
-  <string name="NotificationChannel_group_messages">Sporočila</string>
+  <string name="NotificationChannel_group_chats">Pogovori</string>
   <string name="NotificationChannel_missing_display_name">Neznano</string>
   <string name="NotificationChannel_voice_notes">Glasovna sporočila</string>
+  <string name="NotificationChannel_contact_joined_signal">Oseba iz imenika se je pridružila Signalu</string>
+  <string name="NotificationChannels__no_activity_available_to_open_notification_channel_settings">Na voljo ni nobene aktivnosti povezane z obvestili.</string>
   <!--ProfileEditNameFragment-->
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Hitri odziv ni mogoč, kadar je aplikacija Signal zaklenjena!</string>
@@ -1608,6 +1615,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_signal">Signal</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Novo sporočilo</string>
+  <string name="SingleRecipientNotificationBuilder_message_request">Prošnja za pogovor</string>
   <!--ThumbnailView-->
   <string name="ThumbnailView_Play_video_description">Predvajaj video</string>
   <string name="ThumbnailView_Has_a_caption_description">Ima besedilo</string>
@@ -1719,6 +1727,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="ConversationUpdateItem_return_to_call">Zopet se pridruži klicu</string>
   <string name="ConversationUpdateItem_call_is_full">Klic je polno zaseden</string>
   <string name="ConversationUpdateItem_invite_friends">Vabilo prijateljem/icam</string>
+  <string name="ConversationUpdateItem_enable_call_notifications">Vklopi obvestila o klicih</string>
   <!--audio_view-->
   <string name="audio_view__play_pause_accessibility_description">Predvajanje … pavza</string>
   <string name="audio_view__download_accessibility_description">Prenesi</string>
@@ -1743,7 +1752,17 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="safety_number_change_dialog__view">Preglej</string>
   <string name="safety_number_change_dialog__previous_verified">Prej potrjeno</string>
   <!--EnableCallNotificationSettingsDialog__call_notifications_checklist-->
+  <string name="EnableCallNotificationSettingsDialog__call_notifications_enabled">Obvestila o klicih so vklopljena.</string>
+  <string name="EnableCallNotificationSettingsDialog__enable_call_notifications">Vklopi obvestila o klicih</string>
+  <string name="EnableCallNotificationSettingsDialog__enable_background_activity">Vklopi delovanje v ozadju</string>
+  <string name="EnableCallNotificationSettingsDialog__everything_looks_good_now">Vse izgleda OK!</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_here_and_turn_on_show_notifications">Za prejemanje obvestil o klicih tapnite tu in vklopite \"Prikazuj obvestila.\"</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_here_and_turn_on_notifications"> Za prejemanje obvestil o klicih tapnite tu in vklopite obvetila. Prepričajte se, da so zvok in pojavna okna vklopljeni.</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_here_and_enable_background_activity_in_battery_settings">Za prejemanje obvestil o klicih tapnite tu in vklopite delovanje v ozadju v nastavitvah baterije.</string>
   <string name="EnableCallNotificationSettingsDialog__settings">Nastavitve</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_settings_and_turn_on_show_notifications">Za prejemanje obvestil o klicih tapnite Nastavitve in vklopite \"Prikazuj obvestila.\"</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_settings_and_turn_on_notifications">Za prejemanje obvestil o klicih tapnite Nastavitve in vklopite prikaz obvestil. Prepričajte se, da so zvok in pojavna okna vklopljeni.</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_settings_and_enable_background_activity_in_battery_settings">Za prejemanje obvestil o klicih tapnite Nastavitve in vklopite delovanje v ozadju v nastavitvah baterije.</string>
   <!--country_selection_fragment-->
   <string name="country_selection_fragment__loading_countries">Nalaganje držav …</string>
   <string name="country_selection_fragment__search">Iskanje</string>
@@ -1810,7 +1829,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
     <item quantity="other">%d drugih</item>
   </plurals>
   <!--giphy_activity-->
-  <string name="giphy_activity_toolbar__search_gifs_and_stickers">Iskanje po GIF-ih in nalepkah</string>
+  <string name="giphy_activity_toolbar__search_gifs">Iskanje po GIFih</string>
   <!--giphy_fragment-->
   <string name="giphy_fragment__nothing_found">Nič ni bilo najdeno</string>
   <!--log_submit_activity-->
@@ -1936,6 +1955,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
     <item>Vprašanje</item>
     <item>Odziv</item>
     <item>Drugo</item>
+    <item>Plačila</item>
   </string-array>
   <!--ReactWithAnyEmojiBottomSheetDialogFragment-->
   <string name="ReactWithAnyEmojiBottomSheetDialogFragment__this_message">To sporočilo</string>
@@ -1953,8 +1973,10 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="arrays__use_default">Uporabi prednastavljeno</string>
   <string name="arrays__use_custom">Uporabi po meri</string>
   <string name="arrays__mute_for_one_hour">Izklopi za 1 uro</string>
+  <string name="arrays__mute_for_eight_hours">Utišaj za 8 ur</string>
   <string name="arrays__mute_for_one_day">Izklopi za 1 dan</string>
   <string name="arrays__mute_for_seven_days">Izklopi za 7 dni</string>
+  <string name="arrays__always">Za vedno</string>
   <string name="arrays__settings_default">Sistemsko privzeto</string>
   <string name="arrays__enabled">Vklopljeno</string>
   <string name="arrays__disabled">Izklopljeno</string>
@@ -1980,6 +2002,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
     <item quantity="other">%dur</item>
   </plurals>
   <!--preferences.xml-->
+  <string name="preferences_beta">Beta</string>
   <string name="preferences__sms_mms">Sporočila SMS in MMS</string>
   <string name="preferences__pref_all_sms_title">Prejemaj sporočila SMS</string>
   <string name="preferences__pref_all_mms_title">Prejemaj sporočila MMS</string>
@@ -2043,6 +2066,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Za vsako poslano sporočilo SMS zahtevaj potrdilo o prejemu</string>
   <string name="preferences__data_and_storage">Podatki in pomnilnik</string>
   <string name="preferences__storage">Pomnilnik</string>
+  <string name="preferences__payments">Plačila</string>
+  <string name="preferences__payments_beta">Plačila (Beta)</string>
   <string name="preferences__conversation_length_limit">Omejitev dolžine pogovorov</string>
   <string name="preferences__keep_messages">Hramba sporočil</string>
   <string name="preferences__clear_message_history">Izbriši zgodovino pogovorov</string>
@@ -2149,6 +2174,61 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences_enter_proxy_address">Vnesite naslov proksi</string>
   <string name="configurable_single_select__customize_option">Nastavitve po meri</string>
   <!--Internal only preferences-->
+  <!--Payments-->
+  <string name="PaymentsActivityFragment__all_activity">Vse dejavnosti</string>
+  <string name="PaymentsAllActivityFragment__all">Vse</string>
+  <string name="PaymentsAllActivityFragment__sent">Poslano:</string>
+  <string name="PaymentsAllActivityFragment__received">Prejeto</string>
+  <string name="PaymentsHomeFragment__introducing_payments">Predstavljamo vam Plačila (Beta)</string>
+  <string name="PaymentsHomeFragment__use_signal_to_send_and_receive">Uporabljajte Signal za pošiljanje in prejemanje nove digitalne valute MobileCoin, specializirane za zasebnost. Vklopite in začnite.</string>
+  <string name="PaymentsHomeFragment__activate_payments">Vklopi Plačila</string>
+  <string name="PaymentsHomeFragment__activating_payments">Vklapljanje Plačil …</string>
+  <string name="PaymentsHomeFragment__restore_payments_account">Obnovitev računa za plačila</string>
+  <string name="PaymentsHomeFragment__no_recent_activity_yet">Brez nedavnih dejavnosti</string>
+  <string name="PaymentsHomeFragment__pending_requests">Čakajoče prošnje</string>
+  <string name="PaymentsHomeFragment__recent_activity">Nedavne dejavnosti</string>
+  <string name="PaymentsHomeFragment__see_all">Prikaz vseh</string>
+  <string name="PaymentsHomeFragment__add_funds">Dodaj sredstva</string>
+  <string name="PaymentsHomeFragment__send">Pošlji</string>
+  <string name="PaymentsHomeFragment__sent_s">Poslano: %1$s</string>
+  <string name="PaymentsHomeFragment__received_s">Prejeto: %1$s</string>
+  <string name="PaymentsHomeFragment__transfer_to_exchange">Prenesi v menjalnico</string>
+  <string name="PaymentsHomeFragment__currency_conversion">Pretvorba valut</string>
+  <string name="PaymentsHomeFragment__deactivate_payments">Izklop Plačil</string>
+  <string name="PaymentsHomeFragment__help">Pomoč</string>
+  <string name="PaymentsHomeFragment__continue">Nadaljuj</string>
+  <string name="PaymentsHomeFragment__details">Podrobnosti</string>
+  <!--PaymentsAddMoneyFragment-->
+  <string name="PaymentsAddMoneyFragment__add_funds">Dodaj sredstva</string>
+  <string name="PaymentsAddMoneyFragment__copy">Kopiraj</string>
+  <string name="PaymentsAddMoneyFragment__copied_to_clipboard">Kopirano v odložišče</string>
+  <!--PaymentsDetailsFragment-->
+  <string name="PaymentsDetailsFragment__details">Podrobnosti</string>
+  <string name="PaymentsDetailsFragment__status">Status</string>
+  <string name="PaymentsDetailsFragment__to">Naslovnik</string>
+  <string name="PaymentsDetailsFragment__from">Pošiljatelj</string>
+  <!--PaymentsTransferFragment-->
+  <string name="PaymentsTransferFragment__scan_qr_code">Skeniraj kodo QR</string>
+  <string name="PaymentsTransferFragment__next">Naprej</string>
+  <string name="PaymentsTransferFragment__settings">Nastavitve</string>
+  <!--PaymentsTransferQrScanFragment-->
+  <!--CreatePaymentFragment-->
+  <string name="CreatePaymentFragment__request">Prošnja</string>
+  <string name="CreatePaymentFragment__1">1</string>
+  <string name="CreatePaymentFragment__2">2</string>
+  <string name="CreatePaymentFragment__3">3</string>
+  <string name="CreatePaymentFragment__4">4</string>
+  <string name="CreatePaymentFragment__5">5</string>
+  <string name="CreatePaymentFragment__6">6</string>
+  <string name="CreatePaymentFragment__7">7</string>
+  <string name="CreatePaymentFragment__8">8</string>
+  <string name="CreatePaymentFragment__9">9</string>
+  <string name="CreatePaymentFragment__0">0</string>
+  <!--EditNoteFragment-->
+  <!--ConfirmPaymentFragment-->
+  <string name="ConfirmPayment__to">Naslovnik</string>
+  <!--CurrencyAmountFormatter_s_at_s-->
+  <!--SetCurrencyFragment-->
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -2591,6 +2671,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="OldDeviceTransferLockedDialog__your_signal_account_has_been_transferred_to_your_new_device">Vaš račun Signal  je bil uspešno prenešen na novo napravo, vendar morate na njej dokončati proces registracije. Na tej napravi Signal ne bo aktiven.</string>
   <string name="OldDeviceTransferLockedDialog__done">OK</string>
   <string name="OldDeviceTransferLockedDialog__cancel_and_activate_this_device">Prekini in aktiviraj to napravo</string>
+  <!--AdvancedPreferenceFragment-->
   <!--RecipientBottomSheet-->
   <string name="RecipientBottomSheet_block">Blokiraj</string>
   <string name="RecipientBottomSheet_unblock">Odblokiraj</string>
@@ -2741,5 +2822,28 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="WallpaperCropActivity__set_wallpaper_for_s">Določi ozadje za uporabnika/co %s.</string>
   <string name="WallpaperCropActivity__error_setting_wallpaper">Napaka pri nastavitvi ozadja.</string>
   <string name="WallpaperCropActivity__blur_photo">Zabriši fotografijo</string>
+  <!--InfoCard-->
+  <string name="payment_info_card_hide">Skrij</string>
+  <string name="payment_info_card_update_pin">Posodobite PIN</string>
+  <!--DeactivateWalletFragment-->
+  <!--PaymentsRecoveryStartFragment-->
+  <!--PaymentsRecoveryPasteFragment-->
+  <string name="PaymentsRecoveryPasteFragment__next">Naprej</string>
+  <!--PaymentsRecoveryPhraseFragment-->
+  <string name="PaymentsRecoveryPhraseFragment__next">Naprej</string>
+  <string name="PaymentsRecoveryPhraseFragment__edit">Uredi</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy">Kopiraj</string>
+  <!--PaymentsRecoveryPhraseConfirmFragment-->
+  <string name="PaymentRecoveryPhraseConfirmFragment__done">OK</string>
+  <!--PaymentsRecoveryEntryFragment-->
+  <string name="PaymentsRecoveryEntryFragment__next">Naprej</string>
+  <!--ClearClipboardAlarmReceiver-->
+  <!--PaymentNotificationsView-->
+  <string name="PaymentNotificationsView__view">Preglej</string>
+  <!--UnreadPayments-->
+  <!--CanNotSendPaymentDialog-->
+  <string name="CanNotSendPaymentDialog__send_a_message">Pošlji sporočilo</string>
+  <!--GroupsInCommonMessageRequest-->
+  <string name="GroupsInCommonMessageRequest__okay">Okej</string>
   <!--EOF-->
 </resources>

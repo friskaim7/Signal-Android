@@ -1057,6 +1057,7 @@
   <string name="MessageRequestBottomView_do_you_want_to_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">اس گروپ میں شامل ہوں اور اس کے ممبروں کے ساتھ اپنا نام اور تصویر بانٹیں؟ جب تک آپ ان کو قبول نہیں کرتے ان کو معلوم نہیں ہوگا کہ آپ نے ان کے پیغامات دیکھے ہیں۔</string>
   <string name="MessageRequestBottomView_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">اس گروپ میں شامل ہوں؟ جب تک آپ ان کو قبول نہ کریں تب تک وہ نہیں جانیں گے کہ آپ نے ان کے پیغامات دیکھے ہیں۔</string>
   <string name="MessageRequestBottomView_unblock_this_group_and_share_your_name_and_photo_with_its_members">اس گروپ کو غیر مسدود کریں اور اس کے ممبروں کے ساتھ اپنا نام اور تصویر شئیر کریں؟ آپ کو کوئی پیغامات موصول نہیں ہوگا جب تک کہ آپ ان کو بلاک نہیں کردیں گے۔</string>
+  <string name="MessageRequestProfileView_view">دیکھیں</string>
   <string name="MessageRequestProfileView_member_of_one_group">کا رکن%1$s</string>
   <string name="MessageRequestProfileView_member_of_two_groups">ممبر%1$s اور%2$s</string>
   <string name="MessageRequestProfileView_member_of_many_groups">کے ممبر%1$s ، %2$sاور%3$s</string>
@@ -1458,16 +1459,17 @@
   <string name="MessageNotifier_this_message_was_deleted">یہ پیغام حذف کردیا گیا تھا۔</string>
   <string name="TurnOffContactJoinedNotificationsActivity__turn_off_contact_joined_signal">رابطے میں شامل Signal اطلاعات بند کردیں؟ آپ انہیں Signal &amp; gt میں دوبارہ فعال کرسکتے ہیں۔ ترتیبات &amp; gt؛ اطلاعات۔</string>
   <!--Notification Channels-->
-  <string name="NotificationChannel_messages">پہلے سے طے شدہ</string>
+  <string name="NotificationChannel_channel_messages">پیغامات</string>
   <string name="NotificationChannel_calls">کالز</string>
   <string name="NotificationChannel_failures">ناکامیاں</string>
   <string name="NotificationChannel_backups">بیک اپس</string>
   <string name="NotificationChannel_locked_status">اسٹیٹس لاک کریں</string>
   <string name="NotificationChannel_app_updates">ایپ تجدید کریں</string>
   <string name="NotificationChannel_other">دوسرے</string>
-  <string name="NotificationChannel_group_messages">پیغامات</string>
+  <string name="NotificationChannel_group_chats">باتیں</string>
   <string name="NotificationChannel_missing_display_name">نامعلوم</string>
   <string name="NotificationChannel_voice_notes">آڈیو نوٹز</string>
+  <string name="NotificationChannel_contact_joined_signal">رابطہ Signal میں شامل ہو گیا</string>
   <!--ProfileEditNameFragment-->
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">جب Signal  لاک ہو فوری جواب دستیاب نہیں!</string>
@@ -1667,7 +1669,6 @@
     <item quantity="other">%dدوسرے</item>
   </plurals>
   <!--giphy_activity-->
-  <string name="giphy_activity_toolbar__search_gifs_and_stickers">گفس اور اسٹیکرز تلاش کریں</string>
   <!--giphy_fragment-->
   <string name="giphy_fragment__nothing_found">کچھ نہیں ملا</string>
   <!--log_submit_activity-->
@@ -1994,6 +1995,35 @@
   <string name="preferences_enter_proxy_address">پراکسی ایڈریس درج کریں</string>
   <string name="configurable_single_select__customize_option">آپشن کو کسٹمائز کریں</string>
   <!--Internal only preferences-->
+  <!--Payments-->
+  <string name="PaymentsAllActivityFragment__all">تمام</string>
+  <string name="PaymentsAllActivityFragment__sent">بھیجا گیا</string>
+  <string name="PaymentsAllActivityFragment__received">وصول ہو گیا ہے</string>
+  <string name="PaymentsHomeFragment__see_all">تمام دیکھیں</string>
+  <string name="PaymentsHomeFragment__send">بھیجیں</string>
+  <string name="PaymentsHomeFragment__help">مدد کریں</string>
+  <string name="PaymentsHomeFragment__continue">جاری رکھیں</string>
+  <string name="PaymentsHomeFragment__details">تفصیلات</string>
+  <!--PaymentsAddMoneyFragment-->
+  <string name="PaymentsAddMoneyFragment__copy">کاپی کریں</string>
+  <string name="PaymentsAddMoneyFragment__copied_to_clipboard">کلپ بورڈ کو کاپی کریں</string>
+  <!--PaymentsDetailsFragment-->
+  <string name="PaymentsDetailsFragment__details">تفصیلات</string>
+  <string name="PaymentsDetailsFragment__status">صورتحال</string>
+  <string name="PaymentsDetailsFragment__to">کے لئے</string>
+  <string name="PaymentsDetailsFragment__from">کی طرف سے</string>
+  <!--PaymentsTransferFragment-->
+  <string name="PaymentsTransferFragment__scan_qr_code">QR کوڈ سکین کریں</string>
+  <string name="PaymentsTransferFragment__next">اگلا</string>
+  <string name="PaymentsTransferFragment__settings">ترتیبات</string>
+  <!--PaymentsTransferQrScanFragment-->
+  <!--CreatePaymentFragment-->
+  <string name="CreatePaymentFragment__request">درخواست </string>
+  <!--EditNoteFragment-->
+  <!--ConfirmPaymentFragment-->
+  <string name="ConfirmPayment__to">کے لئے</string>
+  <!--CurrencyAmountFormatter_s_at_s-->
+  <!--SetCurrencyFragment-->
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -2329,6 +2359,7 @@
   <!--DeviceToDeviceTransferService-->
   <!--OldDeviceTransferLockedDialog-->
   <string name="OldDeviceTransferLockedDialog__done">ہو گیا</string>
+  <!--AdvancedPreferenceFragment-->
   <!--RecipientBottomSheet-->
   <string name="RecipientBottomSheet_block">بلاک</string>
   <string name="RecipientBottomSheet_unblock">ان بلاک</string>
@@ -2473,5 +2504,28 @@
   <string name="WallpaperCropActivity__set_wallpaper_for_s">%s کے لئے وال پیپر سیٹ کریں۔</string>
   <string name="WallpaperCropActivity__error_setting_wallpaper">وال پیپر کی ترتیب میں خامی۔</string>
   <string name="WallpaperCropActivity__blur_photo">تصویر کو دھندلا کرو</string>
+  <!--InfoCard-->
+  <string name="payment_info_card_hide">پوشیدہ کریں</string>
+  <string name="payment_info_card_update_pin">پن کو اپ ڈیٹ کریں</string>
+  <!--DeactivateWalletFragment-->
+  <!--PaymentsRecoveryStartFragment-->
+  <!--PaymentsRecoveryPasteFragment-->
+  <string name="PaymentsRecoveryPasteFragment__next">اگلا</string>
+  <!--PaymentsRecoveryPhraseFragment-->
+  <string name="PaymentsRecoveryPhraseFragment__next">اگلا</string>
+  <string name="PaymentsRecoveryPhraseFragment__edit">ترتیب دیں</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy">کاپی کریں</string>
+  <!--PaymentsRecoveryPhraseConfirmFragment-->
+  <string name="PaymentRecoveryPhraseConfirmFragment__done">ہو گیا</string>
+  <!--PaymentsRecoveryEntryFragment-->
+  <string name="PaymentsRecoveryEntryFragment__next">اگلا</string>
+  <!--ClearClipboardAlarmReceiver-->
+  <!--PaymentNotificationsView-->
+  <string name="PaymentNotificationsView__view">دیکھیں</string>
+  <!--UnreadPayments-->
+  <!--CanNotSendPaymentDialog-->
+  <string name="CanNotSendPaymentDialog__send_a_message">پیغام بھیجیں</string>
+  <!--GroupsInCommonMessageRequest-->
+  <string name="GroupsInCommonMessageRequest__okay">ٹھیک ہے</string>
   <!--EOF-->
 </resources>

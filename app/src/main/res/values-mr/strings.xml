@@ -1055,6 +1055,7 @@
   <string name="MessageRequestBottomView_do_you_want_to_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">या गटात सामील व्हा आणि आपले नाव आणि फोटो त्याचा सदस्यांसह शेअर करू द्यायचे? आपण स्वीकार करेपर्यंत आपण त्यांचा संदेश पाहिला आहे हे त्यांना कळणार नाही.</string>
   <string name="MessageRequestBottomView_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">या गटात सामील व्हायचे? आपण स्वीकार करेपर्यंत आपण त्यांचा संदेश पाहिला आहे हे त्यांना कळणार नाही.</string>
   <string name="MessageRequestBottomView_unblock_this_group_and_share_your_name_and_photo_with_its_members">हा गट अनब्लॉक करायचा आणि आपले नाव आणि फोटो त्याच्या सदस्यांसह सामायिक करायचे? आपण त्यांना अनब्लॉक करेपर्यंत आपल्याला कोणतेही संदेश प्राप्त होणार नाहीत.</string>
+  <string name="MessageRequestProfileView_view">बघा</string>
   <string name="MessageRequestProfileView_member_of_one_group">%1$s चा सदस्य</string>
   <string name="MessageRequestProfileView_member_of_two_groups">%1$s आणि %2$s चा सदस्य</string>
   <string name="MessageRequestProfileView_member_of_many_groups">%1$s, %2$s, आणि %3$s चा सदस्य </string>
@@ -1463,16 +1464,17 @@
   <string name="MessageNotifier_this_message_was_deleted">हा संदेश हटविला गेला.</string>
   <string name="TurnOffContactJoinedNotificationsActivity__turn_off_contact_joined_signal">संपर्क Signal मध्ये सामील झाला सूचना बंद करायच्या? आपण त्यांना पुन्हा Signal &gt; सेटिंग &gt; सूचना मधून सक्षम करू शकता.</string>
   <!--Notification Channels-->
-  <string name="NotificationChannel_messages">पूर्वनिर्धारित</string>
+  <string name="NotificationChannel_channel_messages">संदेश</string>
   <string name="NotificationChannel_calls">कॉल</string>
   <string name="NotificationChannel_failures">अपयश</string>
   <string name="NotificationChannel_backups">बॅकअप</string>
   <string name="NotificationChannel_locked_status">लॉक स्थिती</string>
   <string name="NotificationChannel_app_updates">अॅप अद्यतने</string>
   <string name="NotificationChannel_other">इतर</string>
-  <string name="NotificationChannel_group_messages">संदेश</string>
+  <string name="NotificationChannel_group_chats">चॅट</string>
   <string name="NotificationChannel_missing_display_name">अज्ञात</string>
   <string name="NotificationChannel_voice_notes">व्हॉईस टिपा</string>
+  <string name="NotificationChannel_contact_joined_signal">संपर्क Signal मध्ये सामील झाला</string>
   <!--ProfileEditNameFragment-->
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Signal लॉक केलेले असताना जलद प्रतिसाद अनुपलब्ध!</string>
@@ -1672,7 +1674,6 @@
     <item quantity="other">%d इतर</item>
   </plurals>
   <!--giphy_activity-->
-  <string name="giphy_activity_toolbar__search_gifs_and_stickers">GIF आणि स्टिकर शोधा</string>
   <!--giphy_fragment-->
   <string name="giphy_fragment__nothing_found">काहीही सापडले नाही</string>
   <!--log_submit_activity-->
@@ -1999,6 +2000,35 @@
   <string name="preferences_enter_proxy_address">प्रॉक्सी पत्ता प्रविष्ट करा</string>
   <string name="configurable_single_select__customize_option">पर्याय सानुकूलित करा</string>
   <!--Internal only preferences-->
+  <!--Payments-->
+  <string name="PaymentsAllActivityFragment__all">सर्व</string>
+  <string name="PaymentsAllActivityFragment__sent">पाठविले</string>
+  <string name="PaymentsAllActivityFragment__received">प्राप्त झाले</string>
+  <string name="PaymentsHomeFragment__see_all">सर्व पहा</string>
+  <string name="PaymentsHomeFragment__send">पाठवा</string>
+  <string name="PaymentsHomeFragment__help">मदत</string>
+  <string name="PaymentsHomeFragment__continue">सुरू ठेवा</string>
+  <string name="PaymentsHomeFragment__details">तपशील</string>
+  <!--PaymentsAddMoneyFragment-->
+  <string name="PaymentsAddMoneyFragment__copy">कॉपी करा</string>
+  <string name="PaymentsAddMoneyFragment__copied_to_clipboard">क्लिपबोर्ड वर कॉपी केले</string>
+  <!--PaymentsDetailsFragment-->
+  <string name="PaymentsDetailsFragment__details">तपशील</string>
+  <string name="PaymentsDetailsFragment__status">स्थिती</string>
+  <string name="PaymentsDetailsFragment__to">याला</string>
+  <string name="PaymentsDetailsFragment__from">याकडून</string>
+  <!--PaymentsTransferFragment-->
+  <string name="PaymentsTransferFragment__scan_qr_code">QR कोड स्कॅन करा</string>
+  <string name="PaymentsTransferFragment__next">पुढे</string>
+  <string name="PaymentsTransferFragment__settings">सेटिंग</string>
+  <!--PaymentsTransferQrScanFragment-->
+  <!--CreatePaymentFragment-->
+  <string name="CreatePaymentFragment__request">विनंती </string>
+  <!--EditNoteFragment-->
+  <!--ConfirmPaymentFragment-->
+  <string name="ConfirmPayment__to">याला</string>
+  <!--CurrencyAmountFormatter_s_at_s-->
+  <!--SetCurrencyFragment-->
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -2334,6 +2364,7 @@
   <!--DeviceToDeviceTransferService-->
   <!--OldDeviceTransferLockedDialog-->
   <string name="OldDeviceTransferLockedDialog__done">ठीक</string>
+  <!--AdvancedPreferenceFragment-->
   <!--RecipientBottomSheet-->
   <string name="RecipientBottomSheet_block">अवरोधित करा</string>
   <string name="RecipientBottomSheet_unblock">अनब्लॉक करा</string>
@@ -2478,5 +2509,28 @@
   <string name="WallpaperCropActivity__set_wallpaper_for_s">%s साठी वॉलपेपर सेट करा.</string>
   <string name="WallpaperCropActivity__error_setting_wallpaper">वॉलपेपर सेट करण्यात त्रुटी.</string>
   <string name="WallpaperCropActivity__blur_photo">फोटो अस्पष्ट करा</string>
+  <!--InfoCard-->
+  <string name="payment_info_card_hide">लपवा</string>
+  <string name="payment_info_card_update_pin">PIN अद्यतनित करा</string>
+  <!--DeactivateWalletFragment-->
+  <!--PaymentsRecoveryStartFragment-->
+  <!--PaymentsRecoveryPasteFragment-->
+  <string name="PaymentsRecoveryPasteFragment__next">पुढे</string>
+  <!--PaymentsRecoveryPhraseFragment-->
+  <string name="PaymentsRecoveryPhraseFragment__next">पुढे</string>
+  <string name="PaymentsRecoveryPhraseFragment__edit">संपादन</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy">कॉपी करा</string>
+  <!--PaymentsRecoveryPhraseConfirmFragment-->
+  <string name="PaymentRecoveryPhraseConfirmFragment__done">ठीक</string>
+  <!--PaymentsRecoveryEntryFragment-->
+  <string name="PaymentsRecoveryEntryFragment__next">पुढे</string>
+  <!--ClearClipboardAlarmReceiver-->
+  <!--PaymentNotificationsView-->
+  <string name="PaymentNotificationsView__view">बघा</string>
+  <!--UnreadPayments-->
+  <!--CanNotSendPaymentDialog-->
+  <string name="CanNotSendPaymentDialog__send_a_message">एक संदेश पाठवा</string>
+  <!--GroupsInCommonMessageRequest-->
+  <string name="GroupsInCommonMessageRequest__okay">ठीक आहे</string>
   <!--EOF-->
 </resources>

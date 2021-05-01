@@ -1004,6 +1004,7 @@
   <string name="MessageRequestBottomView_do_you_want_to_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">Tham gia nhóm này và chia sẻ tên và ảnh đại diện của bạn với các thành viên nhóm? Họ sẽ không biết là bạn đã đọc tin nhắn cho tới khi bạn chấp nhận.</string>
   <string name="MessageRequestBottomView_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">Tham gia vào nhóm này? Họ sẽ không biết là bạn đã đọc tin nhắn của họ cho tới khi bạn đồng ý.</string>
   <string name="MessageRequestBottomView_unblock_this_group_and_share_your_name_and_photo_with_its_members">Bỏ chặn nhóm này và chia sẻ tên và ảnh đại diện của bạn với thành viên nhóm? Bạn sẽ không nhận thêm tin nhắn mới cho tới khi bạn bỏ chặn họ.</string>
+  <string name="MessageRequestProfileView_view">Xem</string>
   <string name="MessageRequestProfileView_member_of_one_group">Thành viên của %1$s</string>
   <string name="MessageRequestProfileView_member_of_two_groups">Thành viên của %1$s và %2$s</string>
   <string name="MessageRequestProfileView_member_of_many_groups">Thành viên của %1$s, %2$s và %3$s</string>
@@ -1400,16 +1401,17 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
   <string name="MessageNotifier_this_message_was_deleted">Tin nhắn này đã bị xóa.</string>
   <string name="TurnOffContactJoinedNotificationsActivity__turn_off_contact_joined_signal">Tắt thông báo khi liên hệ bắt đầu sử dụng Signal? Bạn có thể bật lại ở Signal &gt; Cài đặt &gt; Thông báo.</string>
   <!--Notification Channels-->
-  <string name="NotificationChannel_messages">Mặc định</string>
+  <string name="NotificationChannel_channel_messages">Tin nhắn</string>
   <string name="NotificationChannel_calls">Cuộc gọi</string>
   <string name="NotificationChannel_failures">Thất bại</string>
   <string name="NotificationChannel_backups">Sao lưu</string>
   <string name="NotificationChannel_locked_status">Tình trạng khoá</string>
   <string name="NotificationChannel_app_updates">Cập nhật ứng dụng</string>
   <string name="NotificationChannel_other">Khác</string>
-  <string name="NotificationChannel_group_messages">Tin nhắn</string>
+  <string name="NotificationChannel_group_chats">Trò chuyện</string>
   <string name="NotificationChannel_missing_display_name">Vô danh</string>
   <string name="NotificationChannel_voice_notes">Ghi chú Âm thanh</string>
+  <string name="NotificationChannel_contact_joined_signal">Liên hệ bắt đầu dùng Signal</string>
   <!--ProfileEditNameFragment-->
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Trả lời nhanh không khả dụng khi Signal bị khoá!</string>
@@ -1600,7 +1602,6 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
     <item quantity="other">%d khác</item>
   </plurals>
   <!--giphy_activity-->
-  <string name="giphy_activity_toolbar__search_gifs_and_stickers">Tìm kiếm GIF và nhãn dán</string>
   <!--giphy_fragment-->
   <string name="giphy_fragment__nothing_found">Không tìm thấy</string>
   <!--log_submit_activity-->
@@ -1717,13 +1718,6 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
   <string name="HelpFragment__debug_log">Nhật kí lỗi:</string>
   <string name="HelpFragment__could_not_upload_logs">Không thể tải lên nhật kí lỗi</string>
   <string name="HelpFragment__please_be_as_descriptive_as_possible">Vui lòng miêu tả càng chi tiết càng tốt để giúp chúng tôi hiểu về vấn đề.</string>
-  <string-array name="HelpFragment__categories">
-    <item>Tính năng bị hỏng</item>
-    <item>Yêu cầu tính năng mới</item>
-    <item>Câu hỏi</item>
-    <item>Góp ý</item>
-    <item>Khác</item>
-  </string-array>
   <!--ReactWithAnyEmojiBottomSheetDialogFragment-->
   <string name="ReactWithAnyEmojiBottomSheetDialogFragment__this_message">Tin nhắn này</string>
   <string name="ReactWithAnyEmojiBottomSheetDialogFragment__recently_used">Sử dụng gần đây</string>
@@ -1933,6 +1927,35 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
   <string name="preferences_enter_proxy_address">Nhập địa chỉ proxy</string>
   <string name="configurable_single_select__customize_option">Sửa cài đặt</string>
   <!--Internal only preferences-->
+  <!--Payments-->
+  <string name="PaymentsAllActivityFragment__all">Tất cả</string>
+  <string name="PaymentsAllActivityFragment__sent">Đã gửi</string>
+  <string name="PaymentsAllActivityFragment__received">Đã nhận</string>
+  <string name="PaymentsHomeFragment__see_all">Xem tất cả</string>
+  <string name="PaymentsHomeFragment__send">Gửi</string>
+  <string name="PaymentsHomeFragment__help">Hỗ trợ</string>
+  <string name="PaymentsHomeFragment__continue">Tiếp tục</string>
+  <string name="PaymentsHomeFragment__details">Chi tiết</string>
+  <!--PaymentsAddMoneyFragment-->
+  <string name="PaymentsAddMoneyFragment__copy">Sao chép</string>
+  <string name="PaymentsAddMoneyFragment__copied_to_clipboard">Đã sao chép vào clipboard</string>
+  <!--PaymentsDetailsFragment-->
+  <string name="PaymentsDetailsFragment__details">Chi tiết</string>
+  <string name="PaymentsDetailsFragment__status">Trạng thái</string>
+  <string name="PaymentsDetailsFragment__to">Đến</string>
+  <string name="PaymentsDetailsFragment__from">Từ</string>
+  <!--PaymentsTransferFragment-->
+  <string name="PaymentsTransferFragment__scan_qr_code">Quét Mã QR</string>
+  <string name="PaymentsTransferFragment__next">Tiếp</string>
+  <string name="PaymentsTransferFragment__settings">Cài đặt</string>
+  <!--PaymentsTransferQrScanFragment-->
+  <!--CreatePaymentFragment-->
+  <string name="CreatePaymentFragment__request">Yêu cầu</string>
+  <!--EditNoteFragment-->
+  <!--ConfirmPaymentFragment-->
+  <string name="ConfirmPayment__to">Đến</string>
+  <!--CurrencyAmountFormatter_s_at_s-->
+  <!--SetCurrencyFragment-->
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -2310,6 +2333,7 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
   <!--DeviceToDeviceTransferService-->
   <!--OldDeviceTransferLockedDialog-->
   <string name="OldDeviceTransferLockedDialog__done">Xong</string>
+  <!--AdvancedPreferenceFragment-->
   <!--RecipientBottomSheet-->
   <string name="RecipientBottomSheet_block">Chặn</string>
   <string name="RecipientBottomSheet_unblock">Bỏ chặn</string>
@@ -2454,5 +2478,28 @@ Nhận thông tin trao đổi mã khóa về phiên bản giao thức không h�
   <string name="WallpaperCropActivity__set_wallpaper_for_s">Cài ảnh nền cho %s.</string>
   <string name="WallpaperCropActivity__error_setting_wallpaper">Lỗi cài ảnh nền.</string>
   <string name="WallpaperCropActivity__blur_photo">Mờ ảnh</string>
+  <!--InfoCard-->
+  <string name="payment_info_card_hide">Ẩn</string>
+  <string name="payment_info_card_update_pin">Cập nhật mã PIN</string>
+  <!--DeactivateWalletFragment-->
+  <!--PaymentsRecoveryStartFragment-->
+  <!--PaymentsRecoveryPasteFragment-->
+  <string name="PaymentsRecoveryPasteFragment__next">Tiếp</string>
+  <!--PaymentsRecoveryPhraseFragment-->
+  <string name="PaymentsRecoveryPhraseFragment__next">Tiếp</string>
+  <string name="PaymentsRecoveryPhraseFragment__edit">Sửa</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy">Sao chép</string>
+  <!--PaymentsRecoveryPhraseConfirmFragment-->
+  <string name="PaymentRecoveryPhraseConfirmFragment__done">Xong</string>
+  <!--PaymentsRecoveryEntryFragment-->
+  <string name="PaymentsRecoveryEntryFragment__next">Tiếp</string>
+  <!--ClearClipboardAlarmReceiver-->
+  <!--PaymentNotificationsView-->
+  <string name="PaymentNotificationsView__view">Xem</string>
+  <!--UnreadPayments-->
+  <!--CanNotSendPaymentDialog-->
+  <string name="CanNotSendPaymentDialog__send_a_message">Gửi tin nhắn</string>
+  <!--GroupsInCommonMessageRequest-->
+  <string name="GroupsInCommonMessageRequest__okay">OK</string>
   <!--EOF-->
 </resources>

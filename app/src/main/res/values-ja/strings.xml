@@ -38,6 +38,7 @@
   <string name="ApplicationPreferencesActivity_pin_disabled">PINを無効にしました。</string>
   <string name="ApplicationPreferencesActivity_hide">閉じる</string>
   <string name="ApplicationPreferencesActivity_hide_reminder">リマインダーを閉じますか？</string>
+  <string name="ApplicationPreferencesActivity_before_you_can_disable_your_pin">PINを無効化する前に、口座を回復するためのリカバリーフレーズを保存しなければなりません。</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="other">%d分</item>
@@ -56,6 +57,7 @@
   <string name="AttachmentKeyboard_location">場所</string>
   <string name="AttachmentKeyboard_Signal_needs_permission_to_show_your_photos_and_videos">写真や動画を表示するには、Signalに許可が必要です。</string>
   <string name="AttachmentKeyboard_give_access">アクセスを許可する</string>
+  <string name="AttachmentKeyboard_payment">支払い</string>
   <!--AttachmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">メディアを選択するアプリが見つかりません。</string>
   <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">写真や動画、音声データを添付するには、Signalにストレージへのアクセス許可が必要ですが、無効になっています。アプリ設定メニューの「アクセス許可」で「ストレージ」を有効にしてください。</string>
@@ -575,6 +577,7 @@
   <string name="ManageGroupActivity_mentions">メンション</string>
   <string name="ManageGroupActivity_chat_wallpaper">チャットの壁紙</string>
   <string name="ManageGroupActivity_until_s">%1$s まで</string>
+  <string name="ManageGroupActivity_always">常時</string>
   <string name="ManageGroupActivity_off">オフ</string>
   <string name="ManageGroupActivity_on">オン</string>
   <string name="ManageGroupActivity_view_all_members">すべてのメンバーを表示</string>
@@ -624,6 +627,7 @@
   <string name="ManageRecipientActivity_mute_notifications">通知をミュート</string>
   <string name="ManageRecipientActivity_custom_notifications">カスタム通知</string>
   <string name="ManageRecipientActivity_until_s">%1$sまで</string>
+  <string name="ManageRecipientActivity_always">常時</string>
   <string name="ManageRecipientActivity_off">オフ</string>
   <string name="ManageRecipientActivity_on">オン</string>
   <string name="ManageRecipientActivity_add_to_a_group">グループへ追加</string>
@@ -779,7 +783,7 @@
   <string name="Megaphones_introducing_reactions">リアクションのご紹介</string>
   <string name="Megaphones_tap_and_hold_any_message_to_quicky_share_how_you_feel">メッセージを長押しして、手軽にリアクションできます。</string>
   <string name="Megaphones_remind_me_later">あとで通知</string>
-  <string name="Megaphones_verify_your_signal_pin">Signal PINを確認</string>
+  <string name="Megaphones_verify_your_signal_pin">Signal PINの確認</string>
   <string name="Megaphones_well_occasionally_ask_you_to_verify_your_pin">PINを忘れないよう、確認をお願いします。</string>
   <string name="Megaphones_verify_pin">PINを確認する</string>
   <string name="Megaphones_get_started">始めましょう</string>
@@ -790,6 +794,7 @@
   <string name="NotificationBarManager_signal_call_in_progress">Signal通話中</string>
   <string name="NotificationBarManager__establishing_signal_call">Signal通話を接続しています</string>
   <string name="NotificationBarManager__incoming_signal_call">Signal通話の着信</string>
+  <string name="NotificationBarManager__stopping_signal_call_service">Signal着信サービスを停止しています</string>
   <string name="NotificationBarManager__deny_call">通話を拒否</string>
   <string name="NotificationBarManager__answer_call">通話を開始</string>
   <string name="NotificationBarManager__end_call">通話を終了</string>
@@ -1004,6 +1009,7 @@
   <string name="MessageRequestBottomView_do_you_want_to_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">このグループに参加し、あなたの名前と画像をメンバーと共有しますか？承認するまで、相手にはあなたがメッセージを見たことははわかりません。</string>
   <string name="MessageRequestBottomView_join_this_group_they_wont_know_youve_seen_their_messages_until_you_accept">このグループに参加しますか？招待を受け入れるまで、あなたがメッセージを見たことは他のメンバーにはわかりません。</string>
   <string name="MessageRequestBottomView_unblock_this_group_and_share_your_name_and_photo_with_its_members">このグループのブロックを解除し、名前とプロフィール画像の共有を許可しますか？ブロックを解除するまでメッセージは届きません。</string>
+  <string name="MessageRequestProfileView_view">表示する</string>
   <string name="MessageRequestProfileView_member_of_one_group">%1$s のメンバー</string>
   <string name="MessageRequestProfileView_member_of_two_groups">%1$s と %2$s のメンバー</string>
   <string name="MessageRequestProfileView_member_of_many_groups">%1$s, %2$s および %3$s のメンバー</string>
@@ -1396,16 +1402,17 @@
   <string name="MessageNotifier_this_message_was_deleted">このメッセージは削除されました。</string>
   <string name="TurnOffContactJoinedNotificationsActivity__turn_off_contact_joined_signal">連絡先のSignal参加時の通知を受け取らないようにしますか？この設定はあとでSignal &gt; 設定 &gt; 通知から元に戻せます。</string>
   <!--Notification Channels-->
-  <string name="NotificationChannel_messages">既定</string>
+  <string name="NotificationChannel_channel_messages">メッセージ</string>
   <string name="NotificationChannel_calls">通話</string>
   <string name="NotificationChannel_failures">障害</string>
   <string name="NotificationChannel_backups">バックアップ</string>
   <string name="NotificationChannel_locked_status">ロック状態</string>
   <string name="NotificationChannel_app_updates">アプリ更新</string>
   <string name="NotificationChannel_other">その他</string>
-  <string name="NotificationChannel_group_messages">メッセージ</string>
+  <string name="NotificationChannel_group_chats">チャット</string>
   <string name="NotificationChannel_missing_display_name">不明</string>
   <string name="NotificationChannel_voice_notes">音声メモ</string>
+  <string name="NotificationChannel_contact_joined_signal">連絡先のSignal参加時</string>
   <!--ProfileEditNameFragment-->
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Signalのロック中はクイックレスポンスを使えません！</string>
@@ -1421,6 +1428,7 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_signal">Signal</string>
   <string name="SingleRecipientNotificationBuilder_new_message">新着メッセージ</string>
+  <string name="SingleRecipientNotificationBuilder_message_request">メッセージ申請</string>
   <!--ThumbnailView-->
   <string name="ThumbnailView_Play_video_description">動画を再生</string>
   <string name="ThumbnailView_Has_a_caption_description">キャプション付き</string>
@@ -1523,6 +1531,9 @@
   <string name="ConversationUpdateItem_return_to_call">通話に戻る</string>
   <string name="ConversationUpdateItem_call_is_full">満席です</string>
   <string name="ConversationUpdateItem_invite_friends">友達を招待する</string>
+  <string name="ConversationUpdateItem_enable_call_notifications">着信通知を有効にする</string>
+  <string name="ConversationUpdateItem_no_groups_in_common_review_requests_carefully">共通のグループはありません。慎重に申請を確認してください。</string>
+  <string name="ConversationUpdateItem_no_contacts_in_this_group_review_requests_carefully">このグループに連絡先の人はいません。慎重に申請を確認してください。</string>
   <!--audio_view-->
   <string name="audio_view__play_pause_accessibility_description">再生 … 停止</string>
   <string name="audio_view__download_accessibility_description">ダウンロード</string>
@@ -1547,7 +1558,14 @@
   <string name="safety_number_change_dialog__view">表示する</string>
   <string name="safety_number_change_dialog__previous_verified">以前に検証済み</string>
   <!--EnableCallNotificationSettingsDialog__call_notifications_checklist-->
+  <string name="EnableCallNotificationSettingsDialog__call_notifications_enabled">着信通知を有効にしました。</string>
+  <string name="EnableCallNotificationSettingsDialog__enable_call_notifications">着信通知を有効にする</string>
+  <string name="EnableCallNotificationSettingsDialog__enable_background_activity">バックグラウンド動作を有効にする</string>
+  <string name="EnableCallNotificationSettingsDialog__everything_looks_good_now">すべて順調そうです！</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_here_and_turn_on_show_notifications">着信通知を受けるには、ここをタップして「通知を表示する」を有効にします。</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_here_and_turn_on_notifications">着信通知を受けるには、ここをタップして通知を有効にし、音とポップアップが有効になっていることを確認してください。</string>
   <string name="EnableCallNotificationSettingsDialog__settings">設定</string>
+  <string name="EnableCallNotificationSettingsDialog__to_receive_call_notifications_tap_settings_and_turn_on_show_notifications">着信通知を受けるには、設定をタップして「通知を表示する」を有効にします。</string>
   <!--country_selection_fragment-->
   <string name="country_selection_fragment__loading_countries">国名を読み込んでいます…</string>
   <string name="country_selection_fragment__search">検索</string>
@@ -1596,7 +1614,7 @@
     <item quantity="other">ほか%d人</item>
   </plurals>
   <!--giphy_activity-->
-  <string name="giphy_activity_toolbar__search_gifs_and_stickers">GIFやステッカーを検索</string>
+  <string name="giphy_activity_toolbar__search_gifs">GiFを検索</string>
   <!--giphy_fragment-->
   <string name="giphy_fragment__nothing_found">何も見つかりませんでした</string>
   <!--log_submit_activity-->
@@ -1714,11 +1732,12 @@
   <string name="HelpFragment__could_not_upload_logs">ログをアップロードできませんでした</string>
   <string name="HelpFragment__please_be_as_descriptive_as_possible">問題を理解するため、できるだけ詳細に記述してください。</string>
   <string-array name="HelpFragment__categories">
-    <item>機能の不具合</item>
+    <item>機能の不具合k</item>
     <item>機能のリクエスト</item>
     <item>質問</item>
     <item>フィードバック</item>
     <item>その他</item>
+    <item>支払い機能</item>
   </string-array>
   <!--ReactWithAnyEmojiBottomSheetDialogFragment-->
   <string name="ReactWithAnyEmojiBottomSheetDialogFragment__this_message">このメッセージ</string>
@@ -1736,8 +1755,10 @@
   <string name="arrays__use_default">既定を使う</string>
   <string name="arrays__use_custom">カスタムを使う</string>
   <string name="arrays__mute_for_one_hour">1時間ミュート</string>
+  <string name="arrays__mute_for_eight_hours">8時間ミュート</string>
   <string name="arrays__mute_for_one_day">1日間ミュート</string>
   <string name="arrays__mute_for_seven_days">7日間ミュート</string>
+  <string name="arrays__always">常時</string>
   <string name="arrays__settings_default">既定の設定</string>
   <string name="arrays__enabled">有効</string>
   <string name="arrays__disabled">無効</string>
@@ -1760,6 +1781,7 @@
     <item quantity="other">%d時間</item>
   </plurals>
   <!--preferences.xml-->
+  <string name="preferences_beta">ベータ</string>
   <string name="preferences__sms_mms">SMSとMMS</string>
   <string name="preferences__pref_all_sms_title">全てのSMSを受信</string>
   <string name="preferences__pref_all_mms_title">全てのMMSを受信</string>
@@ -1823,6 +1845,8 @@
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">送信するすべてのSMSで配信レポートを要求します</string>
   <string name="preferences__data_and_storage">データとストレージ</string>
   <string name="preferences__storage">ストレージ</string>
+  <string name="preferences__payments">支払い</string>
+  <string name="preferences__payments_beta">支払い機能 (ベータ)</string>
   <string name="preferences__conversation_length_limit">チャットの最大メッセージ件数</string>
   <string name="preferences__keep_messages">メッセージの保存期間</string>
   <string name="preferences__clear_message_history">メッセージ履歴を削除</string>
@@ -1929,6 +1953,86 @@
   <string name="preferences_enter_proxy_address">プロキシアドレスを入力してください</string>
   <string name="configurable_single_select__customize_option">オプションのカスタマイズ</string>
   <!--Internal only preferences-->
+  <!--Payments-->
+  <string name="PaymentsAllActivityFragment__all">全員</string>
+  <string name="PaymentsAllActivityFragment__sent">送信</string>
+  <string name="PaymentsAllActivityFragment__received">受信</string>
+  <string name="PaymentsHomeFragment__introducing_payments">支払い機能のご紹介 (ベータ)</string>
+  <string name="PaymentsHomeFragment__use_signal_to_send_and_receive">Signalで、プライバシーを考慮した仮想通貨MobileCoinを利用できます。利用するには機能を有効化してください。</string>
+  <string name="PaymentsHomeFragment__activate_payments">支払い機能を有効化</string>
+  <string name="PaymentsHomeFragment__see_all">すべて表示</string>
+  <string name="PaymentsHomeFragment__send">送信する</string>
+  <string name="PaymentsHomeFragment__sent_s">%1$s を送付しました</string>
+  <string name="PaymentsHomeFragment__received_s">%1$s を受け取りました</string>
+  <string name="PaymentsHomeFragment__currency_conversion">通貨換算</string>
+  <string name="PaymentsHomeFragment__recovery_phrase">リカバリーフレーズ</string>
+  <string name="PaymentsHomeFragment__help">ヘルプ</string>
+  <string name="PaymentsHomeFragment__sent_payment">送金済み</string>
+  <string name="PaymentsHomeFragment__received_payment">受け取り済み</string>
+  <string name="PaymentsHomeFragment__processing_payment">支払いを処理しています</string>
+  <string name="PaymentsHomeFragment__unknown_amount">---</string>
+  <string name="PaymentsHomeFragment__currency_conversion_not_available">通貨換算は利用できません</string>
+  <string name="PaymentsHomeFragment__deactivate_payments_question">支払い機能を停止しますか？</string>
+  <string name="PaymentsHomeFragment__deactivate">支払い機能を停止</string>
+  <string name="PaymentsHomeFragment__continue">続ける</string>
+  <string name="PaymentsHomeFragment__payments_deactivated">支払い機能を停止</string>
+  <string name="PaymentsHomeFragment__details">詳細</string>
+  <string name="PaymentsHomeFragment__activate">同意</string>
+  <string name="PaymentsHomeFragment__payments_not_available">Signalの支払い機能はもう利用できません。残金は取引所に移行できますが、送金や入金は今後できません。</string>
+  <!--PaymentsAddMoneyFragment-->
+  <string name="PaymentsAddMoneyFragment__your_wallet_address">あなたのウォレットアドレス</string>
+  <string name="PaymentsAddMoneyFragment__copy">コピー</string>
+  <string name="PaymentsAddMoneyFragment__copied_to_clipboard">クリップボードにコピーしました</string>
+  <string name="PaymentsAddMoneyFragment__to_add_funds">入金するには、あなたのウォレットアドレスにMobileCoinを送る必要があります。MobileCoinを扱っている取引所に開設したあなたの口座から取引を開始し、QRコードをスキャンするか、あなたのウォレットアドレスをコピーします。</string>
+  <!--PaymentsDetailsFragment-->
+  <string name="PaymentsDetailsFragment__details">詳細</string>
+  <string name="PaymentsDetailsFragment__status">状態</string>
+  <string name="PaymentsDetailsFragment__processing_payment">支払いを処理しています…</string>
+  <string name="PaymentsDetailsFragment__network_fee">ネットワーク料金</string>
+  <string name="PaymentsDetailsFragment__to">宛先</string>
+  <string name="PaymentsDetailsFragment__from">差出人</string>
+  <string name="PaymentsDetailsFragment__information">金額と時間を含む取引詳細は、MobileCoinの元帳の一部です。</string>
+  <string name="PaymentsDetailsFragment__coin_cleanup_information">クリーンアップ手数料は、細分化されたコインを結合して取引を完了することができない場合に請求されます。クリーンアップすることで、送金を続けることができます。</string>
+  <string name="PaymentsDetailsFragment__sent_payment">送金済み</string>
+  <string name="PaymentsDetailsFragment__received_payment">受け取り済み</string>
+  <!--PaymentsTransferFragment-->
+  <string name="PaymentsTransferFragment__scan_qr_code">QRコードをスキャンする</string>
+  <string name="PaymentsTransferFragment__to_scan_or_enter_wallet_address">受取人: スキャンするかアドレスを入力</string>
+  <string name="PaymentsTransferFragment__you_can_transfer">取引所のウォレットアドレスへの送金を完了することで、MobileCoinを送金できます。ウォレットアドレスは、QRコードの下にある文字列です。</string>
+  <string name="PaymentsTransferFragment__next">次へ</string>
+  <string name="PaymentsTransferFragment__invalid_address">無効なアドレス</string>
+  <string name="PaymentsTransferFragment__settings">設定</string>
+  <!--PaymentsTransferQrScanFragment-->
+  <!--CreatePaymentFragment-->
+  <string name="CreatePaymentFragment__request">申請</string>
+  <string name="CreatePaymentFragment__pay">払う</string>
+  <string name="CreatePaymentFragment__1">1</string>
+  <string name="CreatePaymentFragment__2">2</string>
+  <string name="CreatePaymentFragment__3">3</string>
+  <string name="CreatePaymentFragment__4">4</string>
+  <string name="CreatePaymentFragment__5">5</string>
+  <string name="CreatePaymentFragment__6">6</string>
+  <string name="CreatePaymentFragment__7">7</string>
+  <string name="CreatePaymentFragment__8">8</string>
+  <string name="CreatePaymentFragment__9">9</string>
+  <string name="CreatePaymentFragment__decimal">.</string>
+  <string name="CreatePaymentFragment__0">0</string>
+  <string name="CreatePaymentFragment__lt">&lt;</string>
+  <string name="CreatePaymentFragment__backspace">バックスペース</string>
+  <string name="CreatePaymentFragment__add_note">メモを追加</string>
+  <string name="CreatePaymentFragment__conversions_are_just_estimates">金額は概算で、正確ではありません</string>
+  <!--EditNoteFragment-->
+  <string name="EditNoteFragment_note">メモ</string>
+  <!--ConfirmPaymentFragment-->
+  <string name="ConfirmPayment__network_fee">ネットワーク料金</string>
+  <string name="ConfirmPayment__to">宛先</string>
+  <string name="ConfirmPayment__total_amount">合計</string>
+  <string name="ConfirmPayment__balance_s">差引: %1$s</string>
+  <string name="ConfirmPayment__processing_payment">支払いを処理しています…</string>
+  <!--CurrencyAmountFormatter_s_at_s-->
+  <!--SetCurrencyFragment-->
+  <string name="SetCurrencyFragment__set_currency">通貨を設定</string>
+  <string name="SetCurrencyFragment__all_currencies">すべての通貨</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -2261,6 +2365,8 @@
   <string name="NewDeviceTransferSetup__waiting_for_old_device_to_connect">古いAndroid端末との接続を待っています…</string>
   <string name="NewDeviceTransferSetup__signal_needs_the_location_permission_to_discover_and_connect_with_your_old_device">古いAndroid端末を検出し接続するには、Signalに位置情報へのアクセス許可が必要です。</string>
   <string name="NewDeviceTransferSetup__signal_needs_location_services_enabled_to_discover_and_connect_with_your_old_device">古いAndroid端末を検出し接続するには、位置情報サービスを有効にする必要があります。</string>
+  <string name="NewDeviceTransferSetup__signal_needs_wifi_on_to_discover_and_connect_with_your_old_device">Signalが古いAndroid端末を検出して接続するには、Wi-Fiが有効になっている必要があります。ただし、Wi-Fiネットワークに接続されている必要はありません。</string>
+  <string name="NewDeviceTransferSetup__sorry_it_appears_your_device_does_not_support_wifi_direct">申し訳ありませんが、この端末はWi-Fi Directに対応していないようです。Signalは、Wi-Fi Directを使って古いAndroid端末を検出し、接続します。古いAndroid端末からアカウントを復元するために、バックアップを復元することは可能です。</string>
   <string name="NewDeviceTransferSetup__restore_a_backup">バックアップを復元</string>
   <string name="NewDeviceTransferSetup__an_unexpected_error_occurred_while_attempting_to_connect_to_your_old_device">古いAndroid端末への接続時に、予期しないエラーが発生しました。</string>
   <!--OldDeviceTransferSetupFragment-->
@@ -2314,14 +2420,14 @@
   <string name="DeviceTransfer__transfer_failed">移行に失敗しました</string>
   <string name="DeviceTransfer__unable_to_transfer">移行できません</string>
   <!--OldDeviceTransferInstructionsFragment-->
-  <string name="OldDeviceTransferInstructions__transfer_account">アカウントの移転</string>
+  <string name="OldDeviceTransferInstructions__transfer_account">アカウントの移行</string>
   <string name="OldDeviceTransferInstructions__you_can_transfer_your_signal_account_when_setting_up_signal_on_a_new_android_device">新しいAndroid端末でSignalを設定する際、以下の前であれば、あなたのSignalアカウントを移行できます:</string>
   <string name="OldDeviceTransferInstructions__first_bullet">1.</string>
-  <string name="OldDeviceTransferInstructions__download_signal_on_your_new_android_device">新しいAndroid端末で、Signalをダウンロードします</string>
+  <string name="OldDeviceTransferInstructions__download_signal_on_your_new_android_device">新しいAndroid端末でSignalをダウンロード</string>
   <string name="OldDeviceTransferInstructions__second_bullet">2.</string>
   <string name="OldDeviceTransferInstructions__tap_on_transfer_or_restore_account">「アカウントの移行または復元」をタップ</string>
   <string name="OldDeviceTransferInstructions__third_bullet">3.</string>
-  <string name="OldDeviceTransferInstructions__select_transfer_from_android_device_when_prompted_and_then_continue">表示に従い「Android端末から移行」、「続ける」を選択します。端末同士を近づけてください。</string>
+  <string name="OldDeviceTransferInstructions__select_transfer_from_android_device_when_prompted_and_then_continue">表示に従い「Android端末から移行」を選択し「続ける」をタップして端末同士を近づける</string>
   <string name="OldDeviceTransferInstructions__continue">続ける</string>
   <!--OldDeviceTransferComplete-->
   <string name="OldDeviceTransferComplete__transfer_complete">移行が完了しました</string>
@@ -2346,6 +2452,7 @@
   <string name="OldDeviceTransferLockedDialog__your_signal_account_has_been_transferred_to_your_new_device">あなたのSignalアカウントは新しい端末に移行しましたが、続けるには新しい端末で登録を完了する必要があります。この端末のSignalは、無効になります。</string>
   <string name="OldDeviceTransferLockedDialog__done">完了</string>
   <string name="OldDeviceTransferLockedDialog__cancel_and_activate_this_device">キャンセルしてこの端末をアクティベート</string>
+  <!--AdvancedPreferenceFragment-->
   <!--RecipientBottomSheet-->
   <string name="RecipientBottomSheet_block">ブロック</string>
   <string name="RecipientBottomSheet_unblock">ブロック解除</string>
@@ -2490,5 +2597,51 @@
   <string name="WallpaperCropActivity__set_wallpaper_for_s">%s の壁紙を設定します。</string>
   <string name="WallpaperCropActivity__error_setting_wallpaper">壁紙の設定でエラーが発生しました。</string>
   <string name="WallpaperCropActivity__blur_photo">写真をぼかす</string>
+  <!--InfoCard-->
+  <string name="payment_info_card_about_mobilecoin">MobileCoinについて</string>
+  <string name="payment_info_card_mobilecoin_is_a_new_privacy_focused_digital_currency">MobileCoinは、プライバシーを考慮した仮想通貨です。</string>
+  <string name="payment_info_card_you_can_add_funds_for_use_in">MobileCoinをウォレットアドレスに送信することで、Singnalで使う口座に入金できます。</string>
+  <string name="payment_info_card_cashing_out">出金</string>
+  <string name="payment_info_card_you_can_cash_out_mobilecoin">MobileCoinを扱っている取引所にいつでも出金できます。取引所のあなたの口座に送付するだけです。</string>
+  <string name="payment_info_card_hide">閉じる</string>
+  <string name="payment_info_card_record_recovery_phrase">リカバリーフレーズを保存</string>
+  <string name="payment_info_card_your_recovery_phrase_gives_you">リカバリーフレーズは、支払口座を復元するもう一つの方法です。</string>
+  <string name="payment_info_card_update_your_pin">PINをアップデート</string>
+  <string name="payment_info_card_with_a_high_balance">残高が大きい時、PINをアップデートし、口座保護を強化できます。</string>
+  <string name="payment_info_card_update_pin">PINをアップデート</string>
+  <!--DeactivateWalletFragment-->
+  <string name="DeactivateWalletFragment__deactivate">支払い機能を停止</string>
+  <string name="DeactivateWalletFragment__your_balance_will_remain">残高は、支払いを再開した時に、Signalにリンクされたウォレットに残ります。</string>
+  <!--PaymentsRecoveryStartFragment-->
+  <string name="PaymentsRecoveryStartFragment__recovery_phrase">リカバリーフレーズ</string>
+  <string name="PaymentsRecoveryStartFragment__start">開始</string>
+  <!--PaymentsRecoveryPasteFragment-->
+  <string name="PaymentsRecoveryPasteFragment__recovery_phrase">リカバリーフレーズ</string>
+  <string name="PaymentsRecoveryPasteFragment__next">次へ</string>
+  <!--PaymentsRecoveryPhraseFragment-->
+  <string name="PaymentsRecoveryPhraseFragment__next">次へ</string>
+  <string name="PaymentsRecoveryPhraseFragment__edit">編集</string>
+  <string name="PaymentsRecoveryPhraseFragment__previous">前へ</string>
+  <string name="PaymentsRecoveryPhraseFragment__do_not_screenshot_or_send_by_email">スクリーンショットを使ったり、メールで転送しないこと</string>
+  <string name="PaymentsRecoveryPhraseFragment__payments_account_restored">支払い口座が復元されました</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy_to_clipboard">クリップボードにコピーしますか？</string>
+  <string name="PaymentsRecoveryPhraseFragment__if_you_choose_to_store">リカバリーフレーズを電子的に保存する場合、信頼できる安全な場所に保存してください。</string>
+  <string name="PaymentsRecoveryPhraseFragment__copy">コピー</string>
+  <!--PaymentsRecoveryPhraseConfirmFragment-->
+  <string name="PaymentRecoveryPhraseConfirmFragment__done">完了</string>
+  <!--PaymentsRecoveryEntryFragment-->
+  <string name="PaymentsRecoveryEntryFragment__next">次へ</string>
+  <!--ClearClipboardAlarmReceiver-->
+  <string name="ClearClipboardAlarmReceiver__clipboard_cleared">クリップボードをクリアしました。</string>
+  <!--PaymentNotificationsView-->
+  <string name="PaymentNotificationsView__view">表示する</string>
+  <!--UnreadPayments-->
+  <!--CanNotSendPaymentDialog-->
+  <string name="CanNotSendPaymentDialog__to_send_a_payment_to_this_user">送金するには、このユーザーがあなたのメッセージリクエストを受け取る必要があります。リクエストを作成するため、先にメッセージを送ってください。</string>
+  <string name="CanNotSendPaymentDialog__send_a_message">メッセージ送信</string>
+  <!--GroupsInCommonMessageRequest-->
+  <string name="GroupsInCommonMessageRequest__you_have_no_groups_in_common_with_this_person">この人と共通のグループがありません。望まないメッセージを避けるため、リクエストは慎重に検討してください。</string>
+  <string name="GroupsInCommonMessageRequest__about_message_requests">メッセージ申請について</string>
+  <string name="GroupsInCommonMessageRequest__okay">OK</string>
   <!--EOF-->
 </resources>

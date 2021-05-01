@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.core.app.NotificationCompat;
 
+import org.thoughtcrime.securesms.MainActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.WebRtcCallActivity;
 import org.thoughtcrime.securesms.dependencies.ApplicationDependencies;
@@ -79,6 +80,24 @@ public class CallNotificationBuilder {
     }
   }
 
+  public static @NonNull Notification getStoppingNotification(@NonNull Context context) {
+    Intent contentIntent = new Intent(context, MainActivity.class);
+    contentIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+    PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, contentIntent, 0);
+
+    return new NotificationCompat.Builder(context, NotificationChannels.OTHER).setSmallIcon(R.drawable.ic_call_secure_white_24dp)
+                                                                              .setContentIntent(pendingIntent)
+                                                                              .setOngoing(true)
+                                                                              .setContentTitle(context.getString(R.string.NotificationBarManager__stopping_signal_call_service))
+                                                                              .setPriority(NotificationCompat.PRIORITY_MIN)
+                                                                              .build();
+  }
+
+  public static int getStoppingNotificationId() {
+    return WEBRTC_NOTIFICATION;
+  }
+
   @SuppressWarnings("BooleanMethodIsAlwaysInverted")
   public static boolean isWebRtcNotification(int notificationId) {
     return notificationId == WEBRTC_NOTIFICATION || notificationId == WEBRTC_NOTIFICATION_RINGING;
@@ -93,7 +112,8 @@ public class CallNotificationBuilder {
   }
 
   private static NotificationCompat.Action getServiceNotificationAction(Context context, Intent intent, int iconResId, int titleResId) {
-    PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, 0);
+    PendingIntent pendingIntent = Build.VERSION.SDK_INT >= 26 ? PendingIntent.getForegroundService(context, 0, intent, 0)
+                                                              : PendingIntent.getService(context, 0, intent, 0);
 
     return new NotificationCompat.Action(iconResId, context.getString(titleResId), pendingIntent);
   }

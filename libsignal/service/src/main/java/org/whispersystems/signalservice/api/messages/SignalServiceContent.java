@@ -28,6 +28,7 @@ import org.whispersystems.signalservice.api.messages.calls.SignalServiceCallMess
 import org.whispersystems.signalservice.api.messages.multidevice.BlockedListMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.ConfigurationMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.MessageRequestResponseMessage;
+import org.whispersystems.signalservice.api.messages.multidevice.OutgoingPaymentMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.ReadMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.RequestMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.SentTranscriptMessage;
@@ -35,7 +36,9 @@ import org.whispersystems.signalservice.api.messages.multidevice.SignalServiceSy
 import org.whispersystems.signalservice.api.messages.multidevice.StickerPackOperationMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.VerifiedMessage;
 import org.whispersystems.signalservice.api.messages.multidevice.ViewOnceOpenMessage;
+import org.whispersystems.signalservice.api.messages.multidevice.ViewedMessage;
 import org.whispersystems.signalservice.api.messages.shared.SharedContact;
+import org.whispersystems.signalservice.api.payments.Money;
 import org.whispersystems.signalservice.api.push.SignalServiceAddress;
 import org.whispersystems.signalservice.api.util.UuidUtil;
 import org.whispersystems.signalservice.internal.push.SignalServiceProtos;
@@ -44,6 +47,7 @@ import org.whispersystems.signalservice.internal.push.UnsupportedDataMessageProt
 import org.whispersystems.signalservice.internal.serialize.SignalServiceAddressProtobufSerializer;
 import org.whispersystems.signalservice.internal.serialize.SignalServiceMetadataProtobufSerializer;
 import org.whispersystems.signalservice.internal.serialize.protos.SignalServiceContentProto;
+import org.whispersystems.util.FlagUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -364,6 +368,21 @@ public final class SignalServiceContent {
                                                                groupContext);
     }
 
+    SignalServiceDataMessage.Payment payment;
+    try {
+      payment = createPayment(content);
+    } catch (InvalidMessageException e) {
+      throw new ProtocolInvalidMessageException(e, metadata.getSender().getIdentifier(), metadata.getSenderDevice());
+    }
+
+    if (content.getRequiredProtocolVersion() > SignalServiceProtos.DataMessage.ProtocolVersion.CURRENT.getNumber()) {
+      throw new UnsupportedDataMessageProtocolVersionException(SignalServiceProtos.DataMessage.ProtocolVersion.CURRENT.getNumber(),
+                                                               content.getRequiredProtocolVersion(),
+                                                               metadata.getSender().getIdentifier(),
+                                                               metadata.getSenderDevice(),
+                                                               groupContext);
+    }
+
     for (SignalServiceProtos.AttachmentPointer pointer : content.getAttachmentsList()) {
       attachments.add(createAttachmentPointer(pointer));
     }
@@ -391,7 +410,8 @@ public final class SignalServiceContent {
                                         content.getIsViewOnce(),
                                         reaction,
                                         remoteDelete,
-                                        groupCallUpdate);
+                                        groupCallUpdate,
+                                        payment);
   }
 
   private static SignalServiceSyncMessage createSynchronizeMessage(SignalServiceMetadata metadata,
@@ -444,6 +464,21 @@ public final class SignalServiceContent {
       }
 
       return SignalServiceSyncMessage.forRead(readMessages);
+    }
+
+    if (content.getViewedList().size() > 0) {
+      List<ViewedMessage> viewedMessages = new LinkedList<>();
+
+      for (SignalServiceProtos.SyncMessage.Viewed viewed : content.getViewedList()) {
+        if (SignalServiceAddress.isValidAddress(viewed.getSenderUuid(), viewed.getSenderE164())) {
+          SignalServiceAddress address = new SignalServiceAddress(UuidUtil.parseOrNull(viewed.getSenderUuid()), viewed.getSenderE164());
+          viewedMessages.add(new ViewedMessage(address, viewed.getTimestamp()));
+        } else {
+          Log.w(TAG, "Encountered an invalid ReadMessage! Ignoring.");
+        }
+      }
+
+      return SignalServiceSyncMessage.forViewed(viewedMessages);
     }
 
     if (content.hasViewOnceOpen()) {
@@ -587,6 +622,32 @@ public final class SignalServiceContent {
       }
 
       return SignalServiceSyncMessage.forMessageRequestResponse(responseMessage);
+    }
+
+    if (content.hasOutgoingPayment()) {
+      SignalServiceProtos.SyncMessage.OutgoingPayment outgoingPayment = content.getOutgoingPayment();
+      switch (outgoingPayment.getPaymentDetailCase()) {
+        case MOBILECOIN: {
+          SignalServiceProtos.SyncMessage.OutgoingPayment.MobileCoin mobileCoin = outgoingPayment.getMobileCoin();
+          Money.MobileCoin                                           amount     = Money.picoMobileCoin(mobileCoin.getAmountPicoMob());
+          Money.MobileCoin                                           fee        = Money.picoMobileCoin(mobileCoin.getFeePicoMob());
+          ByteString                                                 address    = mobileCoin.getRecipientAddress();
+          Optional<UUID>                                             recipient  = Optional.fromNullable(UuidUtil.parseOrNull(outgoingPayment.getRecipientUuid()));
+
+          return SignalServiceSyncMessage.forOutgoingPayment(new OutgoingPaymentMessage(recipient,
+                                                                                        amount,
+                                                                                        fee,
+                                                                                        mobileCoin.getReceipt(),
+                                                                                        mobileCoin.getLedgerBlockIndex(),
+                                                                                        mobileCoin.getLedgerBlockTimestamp(),
+                                                                                        address.isEmpty() ? Optional.absent() : Optional.of(address.toByteArray()),
+                                                                                        Optional.of(outgoingPayment.getNote()),
+                                                                                        mobileCoin.getOutputPublicKeysList(),
+                                                                                        mobileCoin.getSpentKeyImagesList()));
+        }
+        default:
+          return SignalServiceSyncMessage.empty();
+      }
     }
 
     return SignalServiceSyncMessage.empty();
@@ -800,6 +861,33 @@ public final class SignalServiceContent {
     return new SignalServiceDataMessage.GroupCallUpdate(groupCallUpdate.getEraId());
   }
 
+  private static SignalServiceDataMessage.Payment createPayment(SignalServiceProtos.DataMessage content) throws InvalidMessageException {
+    if (!content.hasPayment()) {
+      return null;
+    }
+
+    SignalServiceProtos.DataMessage.Payment payment = content.getPayment();
+
+    switch (payment.getItemCase()) {
+      case NOTIFICATION: return new SignalServiceDataMessage.Payment(createPaymentNotification(payment));
+      default          : throw new InvalidMessageException("Unknown payment item");
+    }
+  }
+
+  private static SignalServiceDataMessage.PaymentNotification createPaymentNotification(SignalServiceProtos.DataMessage.Payment content)
+      throws InvalidMessageException
+  {
+    if (!content.hasNotification() ||
+        content.getNotification().getTransactionCase() != SignalServiceProtos.DataMessage.Payment.Notification.TransactionCase.MOBILECOIN)
+    {
+      throw new InvalidMessageException();
+    }
+
+    SignalServiceProtos.DataMessage.Payment.Notification payment = content.getNotification();
+
+    return new SignalServiceDataMessage.PaymentNotification(payment.getMobileCoin().getReceipt().toByteArray(), payment.getNote());
+  }
+
   private static List<SharedContact> createSharedContacts(SignalServiceProtos.DataMessage content) throws ProtocolInvalidMessageException {
     if (content.getContactCount() <= 0) return null;
 
@@ -905,8 +993,9 @@ public final class SignalServiceContent {
                                               pointer.getWidth(), pointer.getHeight(),
                                               pointer.hasDigest() ? Optional.of(pointer.getDigest().toByteArray()) : Optional.<byte[]>absent(),
                                               pointer.hasFileName() ? Optional.of(pointer.getFileName()) : Optional.<String>absent(),
-                                              (pointer.getFlags() & SignalServiceProtos.AttachmentPointer.Flags.VOICE_MESSAGE_VALUE) != 0,
-                                              (pointer.getFlags() & SignalServiceProtos.AttachmentPointer.Flags.BORDERLESS_VALUE) != 0,
+                                              (pointer.getFlags() & FlagUtil.toBinaryFlag(SignalServiceProtos.AttachmentPointer.Flags.VOICE_MESSAGE_VALUE)) != 0,
+                                              (pointer.getFlags() & FlagUtil.toBinaryFlag(SignalServiceProtos.AttachmentPointer.Flags.BORDERLESS_VALUE)) != 0,
+                                              (pointer.getFlags() & FlagUtil.toBinaryFlag(SignalServiceProtos.AttachmentPointer.Flags.GIF_VALUE)) != 0,
                                               pointer.hasCaption() ? Optional.of(pointer.getCaption()) : Optional.<String>absent(),
                                               pointer.hasBlurHash() ? Optional.of(pointer.getBlurHash()) : Optional.<String>absent(),
                                               pointer.hasUploadTimestamp() ? pointer.getUploadTimestamp() : 0);
@@ -964,6 +1053,7 @@ public final class SignalServiceContent {
                                                     Optional.<byte[]>absent(), 0, 0,
                                                     Optional.fromNullable(pointer.hasDigest() ? pointer.getDigest().toByteArray() : null),
                                                     Optional.<String>absent(),
+                                                    false,
                                                     false,
                                                     false,
                                                     Optional.<String>absent(),

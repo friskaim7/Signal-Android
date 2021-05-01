@@ -72,9 +72,9 @@ public class OutgoingCallActionProcessor extends DeviceAwareActionProcessor {
     webRtcInteractor.updatePhoneState(WebRtcUtil.getInCallPhoneState(context));
     webRtcInteractor.initializeAudioForCall();
     webRtcInteractor.startOutgoingRinger();
-    webRtcInteractor.setWantsBluetoothConnection(true);
 
     webRtcInteractor.setCallInProgressNotification(TYPE_OUTGOING_RINGING, remotePeer);
+    webRtcInteractor.setWantsBluetoothConnection(true);
 
     DatabaseFactory.getSmsDatabase(context).insertOutgoingCall(remotePeer.getId(), currentState.getCallSetupState().isEnableVideoOnCreate());
 
@@ -83,6 +83,9 @@ public class OutgoingCallActionProcessor extends DeviceAwareActionProcessor {
     return builder.changeCallInfoState()
                   .activePeer(remotePeer)
                   .callState(WebRtcViewModel.State.CALL_OUTGOING)
+                  .commit()
+                  .changeLocalDeviceState()
+                  .wantsBluetooth(true)
                   .build();
   }
 

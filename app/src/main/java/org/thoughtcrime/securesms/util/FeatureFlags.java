@@ -50,6 +50,7 @@ public final class FeatureFlags {
 
   private static final long FETCH_INTERVAL = TimeUnit.HOURS.toMillis(2);
 
+  private static final String PAYMENTS_KILL_SWITCH              = "android.payments.kill";
   private static final String USERNAMES                         = "android.usernames";
   private static final String GROUPS_V2_RECOMMENDED_LIMIT       = "global.groupsv2.maxGroupSize";
   private static final String GROUPS_V2_HARD_LIMIT              = "global.groupsv2.groupSizeHardLimit";
@@ -60,7 +61,7 @@ public final class FeatureFlags {
   private static final String CLIENT_EXPIRATION                 = "android.clientExpiration";
   public  static final String DONATE_MEGAPHONE                  = "android.donate";
   private static final String VIEWED_RECEIPTS                   = "android.viewed.receipts";
-  private static final String GV1_FORCED_MIGRATE                = "android.groupsV1Migration.forced";
+  private static final String GV1_FORCED_MIGRATE                = "android.groupsV1Migration.forced.2";
   private static final String SEND_VIEWED_RECEIPTS              = "android.sendViewedReceipts";
   private static final String CUSTOM_VIDEO_MUXER                = "android.customVideoMuxer";
   private static final String CDS_REFRESH_INTERVAL              = "cds.syncInterval.seconds";
@@ -74,6 +75,8 @@ public final class FeatureFlags {
   private static final String ANIMATED_STICKER_MIN_TOTAL_MEMORY = "android.animatedStickerMinTotalMemory";
   private static final String MESSAGE_PROCESSOR_ALARM_INTERVAL  = "android.messageProcessor.alarmIntervalMins";
   private static final String MESSAGE_PROCESSOR_DELAY           = "android.messageProcessor.foregroundDelayMs";
+  private static final String NOTIFICATION_REWRITE              = "android.notificationRewrite";
+  private static final String MP4_GIF_SEND_SUPPORT              = "android.mp4GifSendSupport";
 
   /**
    * We will only store remote values for flags in this set. If you want a flag to be controllable
@@ -81,6 +84,7 @@ public final class FeatureFlags {
    */
   @VisibleForTesting
   static final Set<String> REMOTE_CAPABLE = SetUtil.newHashSet(
+      PAYMENTS_KILL_SWITCH,
       GROUPS_V2_RECOMMENDED_LIMIT,
       GROUPS_V2_HARD_LIMIT,
       INTERNAL_USER,
@@ -103,7 +107,9 @@ public final class FeatureFlags {
       ANIMATED_STICKER_MIN_MEMORY,
       ANIMATED_STICKER_MIN_TOTAL_MEMORY,
       MESSAGE_PROCESSOR_ALARM_INTERVAL,
-      MESSAGE_PROCESSOR_DELAY
+      MESSAGE_PROCESSOR_DELAY,
+      NOTIFICATION_REWRITE,
+      MP4_GIF_SEND_SUPPORT
   );
 
   @VisibleForTesting
@@ -145,7 +151,10 @@ public final class FeatureFlags {
       ANIMATED_STICKER_MIN_MEMORY,
       ANIMATED_STICKER_MIN_TOTAL_MEMORY,
       MESSAGE_PROCESSOR_ALARM_INTERVAL,
-      MESSAGE_PROCESSOR_DELAY
+      MESSAGE_PROCESSOR_DELAY,
+      GV1_FORCED_MIGRATE,
+      NOTIFICATION_REWRITE,
+      MP4_GIF_SEND_SUPPORT
   );
 
   /**
@@ -227,6 +236,11 @@ public final class FeatureFlags {
   public static SelectionLimits groupLimits() {
     return new SelectionLimits(getInteger(GROUPS_V2_RECOMMENDED_LIMIT, 151),
                                getInteger(GROUPS_V2_HARD_LIMIT, 1001));
+  }
+
+  /** Payments Support */
+  public static boolean payments() {
+    return !getBoolean(PAYMENTS_KILL_SWITCH, false);
   }
 
   /** Internal testing extensions. */
@@ -325,6 +339,15 @@ public final class FeatureFlags {
   /** The minimum total memory for rendering animated stickers in the keyboard and such */
   public static int animatedStickerMinimumTotalMemoryMb() {
     return getInteger(ANIMATED_STICKER_MIN_TOTAL_MEMORY, (int) ByteUnit.GIGABYTES.toMegabytes(3));
+  }
+
+  /** Whether or not to use the new notification system. */
+  public static boolean useNewNotificationSystem() {
+    return Build.VERSION.SDK_INT >= 26 || getBoolean(NOTIFICATION_REWRITE, false);
+  }
+
+  public static boolean mp4GifSendSupport() {
+    return getBoolean(MP4_GIF_SEND_SUPPORT, false);
   }
 
   /** Only for rendering debug info. */
