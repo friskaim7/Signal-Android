@@ -1,11 +1,17 @@
 package org.thoughtcrime.securesms.conversation;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
 
 import androidx.annotation.AnyThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
 
 import org.signal.core.util.Conversions;
@@ -73,11 +79,54 @@ public class ConversationMessage {
     return Conversions.byteArrayToLong(bytes);
   }
 
-  public @NonNull SpannableString getDisplayBody(Context context) {
-    if (mentions.isEmpty() || body == null) {
-      return messageRecord.getDisplayBody(context);
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+  private static SpannableString applyFormatting(SpannableString str, char formatter, Object style) {
+    String resultString = str.toString();
+    int index = resultString.indexOf(formatter);
+    int next = -1;
+
+    if (index == -1) {
+      return str;
     }
-    return body;
+
+    SpannableStringBuilder builder = new SpannableStringBuilder("");
+    if (index != 0) {
+      builder.append(str, 0, index);
+    }
+
+    while (index != -1) {
+      if (next != -1) {
+        builder.append(str, next + 1, index);
+      }
+
+      next = resultString.indexOf(formatter, index + 1);
+      if (next == -1) {
+        builder.append(str, index, resultString.length());
+        break;
+      }
+
+      builder.append(resultString.subSequence(index + 1, next), style, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+      index = resultString.indexOf(formatter, next + 1);
+    }
+
+    if ((next != -1) && (next < resultString.length() - 1)) {
+      builder.append(str, next + 1, resultString.length());
+    }
+
+    return SpannableString.valueOf(builder);
+  }
+
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+  public @NonNull SpannableString getDisplayBody(Context context) {
+    SpannableString str;
+
+    if (mentions.isEmpty() || body == null) {
+      str = messageRecord.getDisplayBody(context);
+    }
+    else {
+      str = body;
+    }
+    return  applyFormatting(str, '*', new StyleSpan(Typeface.BOLD));
   }
 
   /**
